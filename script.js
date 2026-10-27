@@ -1,5 +1,5 @@
 /**
- * KAAFFEELLA — PRELOADER, STICKY FOOTER ENGINE, TASTING TRAY & MENU UI
+ * KAAFFEELLA — ROBUST PRELOADER, STICKY FOOTER ENGINE, TASTING TRAY & MENU UI
  */
 
 const MENU_DATA = [
@@ -172,36 +172,38 @@ const MENU_DATA = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Bespoke Editorial Preloader Controller
+  // 1. Bulletproof Editorial Preloader Controller
   const preloader = document.getElementById("preloader");
   const preloaderFill = document.getElementById("preloaderFill");
   const preloaderCount = document.getElementById("preloaderCount");
 
   if (preloader) {
-    const alreadyLoaded = sessionStorage.getItem("kaaffeella_loaded");
-    if (alreadyLoaded) {
-      preloader.style.transitionDuration = "0.4s";
+    let progress = 15;
+    if (preloaderFill) preloaderFill.style.width = `${progress}%`;
+    if (preloaderCount) preloaderCount.textContent = `${progress}%`;
+
+    const timer = setInterval(() => {
+      progress += Math.floor(Math.random() * 15) + 10;
+      if (progress >= 90) {
+        progress = 90; // Hold until window fully loads
+      }
+      if (preloaderFill) preloaderFill.style.width = `${progress}%`;
+      if (preloaderCount) preloaderCount.textContent = `${progress}%`;
+    }, 60);
+
+    window.addEventListener("load", () => {
+      clearInterval(timer);
+      progress = 100;
       if (preloaderFill) preloaderFill.style.width = "100%";
       if (preloaderCount) preloaderCount.textContent = "100%";
-      requestAnimationFrame(() => {
+
+      setTimeout(() => {
         preloader.classList.add("preloader-hidden");
-      });
-    } else {
-      let progress = 0;
-      const timer = setInterval(() => {
-        progress += Math.floor(Math.random() * 18) + 12;
-        if (progress >= 100) {
-          progress = 100;
-          clearInterval(timer);
-          setTimeout(() => {
-            preloader.classList.add("preloader-hidden");
-            sessionStorage.setItem("kaaffeella_loaded", "true");
-          }, 220);
-        }
-        if (preloaderFill) preloaderFill.style.width = `${progress}%`;
-        if (preloaderCount) preloaderCount.textContent = `${progress}%`;
-      }, 95);
-    }
+        setTimeout(() => {
+          preloader.style.display = "none";
+        }, 1000);
+      }, 1000);
+    });
   }
 
   // 2. Dynamic Year
@@ -394,7 +396,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
 
-      // Bind dish click for Tasting Tray
       menuGrid.querySelectorAll(".menu-item-row").forEach((row) => {
         row.addEventListener("click", () => {
           const name = row.dataset.name;
