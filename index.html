@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaaffeella — Artisanal Bites & Cafe</title>
+  <meta name="description" content="Kaaffeella Cafe — Handcrafted sandwiches, wood-inspired pizzas, warm nasta, and artisanal bites." />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Bespoke Editorial Curtain Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-inner">
+      <svg class="preloader-svg" viewBox="0 0 210 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <text x="2" y="42" fill="#FAF7F2" font-family="'Playfair Display', serif" font-weight="600" font-style="italic" font-size="32" letter-spacing="-0.5">Kaaffee</text>
+        <line class="draw-stroke" x1="38" y1="18" x2="105" y2="18" stroke="#FAF7F2" stroke-width="2" stroke-linecap="round"/>
+        <path class="draw-stroke" d="M110 18H168M152 18V44M163 18V44" stroke="#FAF7F2" stroke-width="3.2" stroke-linecap="round"/>
+        <path class="draw-stroke" d="M112 36C116 24 134 22 144 32C147 27 151 26 152 29" stroke="#FAF7F2" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path class="draw-steam" d="M148 13C144 7 153 3 149 -2" stroke="#E63946" stroke-width="3" stroke-linecap="round"/>
+        <path class="draw-steam" d="M132 42C138 48 156 48 164 43" stroke="#E63946" stroke-width="2.8" stroke-linecap="round"/>
+        <path class="draw-steam" d="M135 49C141 54 155 54 161 49" stroke="#E63946" stroke-width="2.4" stroke-linecap="round"/>
+        <path class="draw-steam" d="M140 55C145 58 153 58 158 55" stroke="#E63946" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <div class="preloader-bar-track">
+        <div class="preloader-bar-fill" id="preloaderFill"></div>
+      </div>
+      <div class="preloader-meta">
+        <span>WARMING THE GRILL</span>
+        <span id="preloaderCount">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Elevated Surface Wrapper (Uncovers Sticky Footer Below) -->
+  <div class="page-surface" id="top">
+    <div class="ambient-rings" aria-hidden="true"></div>
+
+    <!-- Sticky Glassmorphism Header -->
+    <header class="site-header">
+      <div class="container nav-container">
+        <a href="index.html" class="brand-logo" aria-label="Kaaffeella Home">
+          <svg class="logo-svg" viewBox="0 0 210 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="2" y="42" fill="#3B0A0A" font-family="'Playfair Display', serif" font-weight="600" font-style="italic" font-size="32" letter-spacing="-0.5">Kaaffee</text>
+            <line x1="38" y1="18" x2="105" y2="18" stroke="#3B0A0A" stroke-width="2" stroke-linecap="round"/>
+            <path d="M110 18H168M152 18V44M163 18V44" stroke="#3B0A0A" stroke-width="3.2" stroke-linecap="round"/>
+            <path d="M112 36C116 24 134 22 144 32C147 27 151 26 152 29" stroke="#3B0A0A" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <path d="M148 13C144 7 153 3 149 -2" stroke="#D92323" stroke-width="3" stroke-linecap="round"/>
+            <path d="M132 42C138 48 156 48 164 43" stroke="#D92323" stroke-width="2.8" stroke-linecap="round"/>
+            <path d="M135 49C141 54 155 54 161 49" stroke="#D92323" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M140 55C145 58 153 58 158 55" stroke="#D92323" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary Navigation">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="index.html#menu" class="nav-link">Menu</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="#menu" class="btn btn-sm btn-maroon">Explore Menu</a>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-drawer" id="mobileDrawer">
+        <nav class="mobile-nav-links">
+          <a href="index.html" class="mobile-link active">Home</a>
+          <a href="index.html#menu" class="mobile-link">The Menu</a>
+          <a href="about.html" class="mobile-link">Our Craft</a>
+          <a href="contact.html" class="mobile-link">Visit & Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section" id="home">
+        <div class="container hero-container">
+          <div class="hero-badge reveal-up">
+            <span class="status-dot"></span> Freshly Crafted Daily
+          </div>
+          
+          <h1 class="hero-title reveal-up delay-1">
+            Everyday cravings,<br />
+            <span class="serif-italic">elevated to an art.</span>
+          </h1>
+          
+          <p class="hero-subtitle reveal-up delay-2">
+            From triple-layered club sandwiches and molten cheese bursts to nostalgic morning <em>garam nasta</em>—prepared fresh to order with uncompromising ingredients.
+          </p>
+          
+          <div class="hero-cta-group reveal-up delay-3">
+            <a href="#menu" class="btn btn-primary magnetic-btn">
+              Explore the Menu
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="about.html" class="btn btn-ghost magnetic-btn">Our Story & Craft</a>
+          </div>
+
+          <div class="hero-metrics reveal-up delay-4">
+            <div class="metric-card">
+              <span class="metric-value">13</span>
+              <span class="metric-label">Curated Categories</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-card">
+              <span class="metric-value">50+</span>
+              <span class="metric-label">Made-to-Order Items</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-card">
+              <span class="metric-value">100%</span>
+              <span class="metric-label">Pure Vegetarian Craft</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Menu Section -->
+      <section class="menu-section" id="menu">
+        <div class="container">
+          <div class="section-header reveal-up">
+            <span class="eyebrow">THE COLLECTION</span>
+            <h2 class="section-title">Crafted for every palate.</h2>
+            <p class="section-desc">Tap any dish below to build your personal tasting tray & estimate your table order.</p>
+          </div>
+
+          <!-- Non-Clipping Filter Bar + Search -->
+          <div class="menu-controls-wrapper reveal-up">
+            <div class="category-tabs-scroll">
+              <div class="category-tabs" id="categoryTabs" role="tablist">
+                <button class="tab-btn active" data-category="all" role="tab">All Categories</button>
+                <button class="tab-btn" data-category="sandwiches" role="tab">Sandwiches</button>
+                <button class="tab-btn" data-category="burgers-fries" role="tab">Burgers & Fries</button>
+                <button class="tab-btn" data-category="pizzas-toasts" role="tab">Pizzas & Toasts</button>
+                <button class="tab-btn" data-category="puffs-garlic" role="tab">Puffs & Garlic Bread</button>
+                <button class="tab-btn" data-category="buns-bites" role="tab">Buns & Quick Bites</button>
+                <button class="tab-btn" data-category="noodles" role="tab">Noodles (Maggie)</button>
+                <button class="tab-btn" data-category="garam-nasta" role="tab">गरम Nasta</button>
+              </div>
+            </div>
+
+            <div class="search-box">
+              <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input type="text" id="menuSearch" placeholder="Search dish (e.g. Tandoori, Puff, Poha)..." aria-label="Search menu items" />
+            </div>
+          </div>
+
+          <div class="menu-bento-grid" id="menuGrid"></div>
+        </div>
+      </section>
+
+      <!-- Editorial Teaser Banner -->
+      <section class="philosophy-section">
+        <div class="container">
+          <div class="bento-showcase">
+            <div class="bento-feature bento-large reveal-up">
+              <span class="eyebrow">THE KAAFFEELLA STANDARD</span>
+              <h3>Measured to the gram.<br/>Toasted to perfection.</h3>
+              <p>
+                Whether it's a 350gm triple-decker Club Sandwich or a 100gm flaky Aloo Puff, every dish on our menu is weighed, layered, and seasoned for consistent crunch and warmth in every bite.
+              </p>
+              <div style="margin-top: 24px;">
+                <a href="about.html" class="btn btn-ghost">Discover Our Craft &rarr;</a>
+              </div>
+            </div>
+
+            <div class="bento-feature bento-dark reveal-up delay-1">
+              <span class="eyebrow-light">PLANNING AN EVENT OR VISIT?</span>
+              <h3>Drop by for गरम Nasta or book a group order.</h3>
+              <p>
+                From morning Poha and Samosas to late-evening Loaded Cheese Garlic Bread, we welcome walk-ins, takeaway, and party bulk orders.
+              </p>
+              <div style="margin-top: 24px;">
+                <a href="contact.html" class="btn btn-light">Get Directions & Contact &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Interactive Floating Tasting Tray (Appears when user clicks any dish) -->
+  <div class="tasting-tray" id="tastingTray" aria-live="polite">
+    <div class="tray-info">
+      <span class="tray-badge" id="trayCount">0</span>
+      <div class="tray-text">
+        <strong id="trayTotal">₹0</strong>
+        <span id="traySummary">Tap any dish to add to your tray</span>
+      </div>
+    </div>
+    <div class="tray-actions">
+      <button class="tray-clear" id="trayClear" type="button">Reset</button>
+      <a href="contact.html" class="btn btn-sm btn-light">Order at Counter / Inquire &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Sticky Bottom Reveal Footer + ZYRAC Signature Bar -->
+  <footer class="site-footer" id="stickyFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo-text">Kaaffee<span>ला</span></div>
+          <p class="footer-tagline">
+            Where warm hospitality meets crisp, handcrafted street-cafe classics.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home & Menu</a></li>
+            <li><a href="about.html">About Our Craft</a></li>
+            <li><a href="contact.html">Contact & Location</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul>
+            <li><span>Mon – Fri:</span> 9:00 AM – 11:00 PM</li>
+            <li><span>Sat – Sun:</span> 8:30 AM – 11:30 PM</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Location & Connect</h4>
+          <p>Kaaffeella Cafe Lounge<br/>Main High Street Promenade</p>
+          <div class="social-links" style="margin-top: 12px;">
+            <a href="contact.html" class="social-pill">Visit Us</a>
+            <a href="tel:+919876543210" class="social-pill">Call Cafe</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span class="year"></span> Kaaffeella. All rights reserved.</p>
+        <a href="#top" class="back-to-top">Back to top &uarr;</a>
+      </div>
+    </div>
+
+    <!-- Unique Interactive ZYRAC Signature Bar Below Footer -->
+    <div class="zyrac-signature-bar">
+      <div class="container zyrac-inner">
+        <div class="zyrac-left">
+          <span class="zyrac-pulse"></span>
+          <span class="zyrac-label">Digital Experience Crafted & Powered by</span>
+          <a href="https://www.instagram.com/zyrac__/" target="_blank" rel="noopener noreferrer" class="zyrac-wordmark">ZYRAC</a>
+        </div>
+
+        <a href="https://www.instagram.com/zyrac__/" target="_blank" rel="noopener noreferrer" class="zyrac-insta-pill magnetic-btn" aria-label="Follow ZYRAC on Instagram @zyrac__">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+          <span>@zyrac__</span>
+          <span class="zyrac-arrow">&nearr;</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
