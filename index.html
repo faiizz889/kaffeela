@@ -14,26 +14,157 @@
 </head>
 <body>
 
-  <!-- Bespoke Editorial Curtain Preloader -->
+ <!-- Bespoke Split-Shutter Editorial Preloader (index.html only) -->
   <div class="preloader" id="preloader" aria-hidden="true">
-    <div class="preloader-inner">
-      <svg class="preloader-svg" viewBox="0 0 210 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="2" y="42" fill="#FAF7F2" font-family="'Playfair Display', serif" font-weight="600" font-style="italic" font-size="32" letter-spacing="-0.5">Kaaffee</text>
-        <line class="draw-stroke" x1="38" y1="18" x2="105" y2="18" stroke="#FAF7F2" stroke-width="2" stroke-linecap="round"/>
-        <path class="draw-stroke" d="M110 18H168M152 18V44M163 18V44" stroke="#FAF7F2" stroke-width="3.2" stroke-linecap="round"/>
-        <path class="draw-stroke" d="M112 36C116 24 134 22 144 32C147 27 151 26 152 29" stroke="#FAF7F2" stroke-width="3" stroke-linecap="round" fill="none"/>
-        <path class="draw-steam" d="M148 13C144 7 153 3 149 -2" stroke="#E63946" stroke-width="3" stroke-linecap="round"/>
-        <path class="draw-steam" d="M132 42C138 48 156 48 164 43" stroke="#E63946" stroke-width="2.8" stroke-linecap="round"/>
-        <path class="draw-steam" d="M135 49C141 54 155 54 161 49" stroke="#E63946" stroke-width="2.4" stroke-linecap="round"/>
-        <path class="draw-steam" d="M140 55C145 58 153 58 158 55" stroke="#E63946" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      <div class="preloader-bar-track">
-        <div class="preloader-bar-fill" id="preloaderFill"></div>
+    <!-- Top & Bottom Architectural Shutters -->
+    <div class="preloader-shutter shutter-top"></div>
+    <div class="preloader-shutter shutter-bottom"></div>
+
+    <!-- Center Expanding Golden Horizon Seam -->
+    <div class="preloader-horizon-track">
+      <div class="preloader-bar-fill" id="preloaderFill"></div>
+    </div>
+
+    <!-- Editorial Stage Content -->
+    <div class="preloader-stage">
+      
+      <!-- Top Telemetry Bar -->
+      <div class="preloader-hud-top">
+        <span class="hud-tag">KAAFFEELLA ARCHIVE // EST. CRAFT</span>
+        <span class="hud-tag hud-right">PURE VEG &bull; FRESH TO ORDER</span>
       </div>
-      <div class="preloader-meta">
-        <span>WARMING THE GRILL</span>
-        <span id="preloaderCount">0%</span>
+
+      <!-- Centerpiece: Live Pouring & Drawing Kaaffeeला Signboard Logo -->
+      <div class="preloader-centerpiece">
+        <div class="preloader-halo"></div>
+        
+        <svg class="preloader-logo-svg" viewBox="0 0 365 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <!-- Warm Ivory Gradient for Dark Roast Background -->
+            <linearGradient id="preloadIvoryGrad" x1="0" y1="0" x2="365" y2="128" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#FFFFFF" />
+              <stop offset="60%" stop-color="#FAF7F2" />
+              <stop offset="100%" stop-color="#E8DFD1" />
+            </linearGradient>
+
+            <!-- Luminous Golden-Yellow Cup & Steam Gradient -->
+            <linearGradient id="preloadGoldGrad" x1="210" y1="105" x2="295" y2="5" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#F59E0B" />
+              <stop offset="50%" stop-color="#FFB703" />
+              <stop offset="100%" stop-color="#FFE066" />
+            </linearGradient>
+
+            <filter id="preloadGlow" x="-10%" y="-10%" width="120%" height="125%">
+              <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.45" />
+            </filter>
+          </defs>
+
+          <g filter="url(#preloadGlow)">
+            <!-- 1. OVERARCHING 'K' SWASH & STEM -->
+            <path class="pl-draw-fast"
+                  d="M18 60 C 11 45, 22 30, 36 37 C 27 48, 21 67, 17 85" 
+                  stroke="url(#preloadIvoryGrad)" stroke-width="7.5" stroke-linecap="round" fill="none" />
+            <path class="pl-draw-arch"
+                  d="M23 58 C 46 31, 102 25, 148 34" 
+                  stroke="url(#preloadIvoryGrad)" stroke-width="7" stroke-linecap="round" fill="none" />
+            <path class="pl-draw-fast"
+                  d="M29 56 L 46 82" 
+                  stroke="url(#preloadIvoryGrad)" stroke-width="7.2" stroke-linecap="round" fill="none" />
+
+            <!-- 2. CONNECTED SCRIPT 'aaffee' -->
+            <text class="pl-fade-word" x="45" y="82"
+                  fill="url(#preloadIvoryGrad)"
+                  font-family="'Playfair Display', Georgia, serif"
+                  font-weight="700"
+                  font-style="italic"
+                  font-size="55"
+                  letter-spacing="-2">aaffee</text>
+
+            <!-- Bridge stroke connecting 'e' to 'ल' -->
+            <path class="pl-draw-fast"
+                  d="M188 73 C 195 73, 200 68, 204 61" 
+                  stroke="url(#preloadIvoryGrad)" stroke-width="6.2" stroke-linecap="round" fill="none" />
+
+            <!-- 3. GOLDEN RISING STEAM FLAMES -->
+            <g class="pl-steam-group">
+              <path class="pl-steam pl-steam-1"
+                    d="M251 34 C 239 22, 246 10, 240 2 C 253 8, 249 21, 258 32 Z"
+                    fill="url(#preloadGoldGrad)" />
+              <path class="pl-steam pl-steam-2"
+                    d="M262 34 C 255 25, 260 16, 255 8 C 266 14, 263 24, 268 32 Z"
+                    fill="url(#preloadGoldGrad)" />
+            </g>
+
+            <!-- 4. GOLDEN 4-LAYER COFFEE CUP (Fills Bottom-Up like Espresso) -->
+            <g class="pl-cup-group">
+              <path class="pl-cup-layer layer-4"
+                    d="M222 68 C 234 80, 270 80, 282 68"
+                    stroke="url(#preloadGoldGrad)" stroke-width="5.2" stroke-linecap="round" fill="none" />
+              <path class="pl-cup-layer layer-3"
+                    d="M226 77 C 237 88, 267 88, 278 77"
+                    stroke="url(#preloadGoldGrad)" stroke-width="4.8" stroke-linecap="round" fill="none" />
+              <path class="pl-cup-layer layer-2"
+                    d="M232 86 C 241 95, 263 95, 272 86"
+                    stroke="url(#preloadGoldGrad)" stroke-width="4.5" stroke-linecap="round" fill="none" />
+              <path class="pl-cup-layer layer-1"
+                    d="M240 94 C 246 99, 258 99, 264 94"
+                    stroke="url(#preloadGoldGrad)" stroke-width="4" stroke-linecap="round" fill="none" />
+              <path class="pl-cup-layer layer-handle"
+                    d="M280 72 C 294 70, 296 88, 275 90"
+                    stroke="url(#preloadGoldGrad)" stroke-width="4.4" stroke-linecap="round" fill="none" />
+            </g>
+
+            <!-- 5. SOLID HINDI 'ला' TOP BAR & STEMS -->
+            <rect class="pl-bar-reveal" x="196" y="37" width="88" height="7.5" rx="3.75" fill="url(#preloadIvoryGrad)" />
+            <rect class="pl-bar-reveal" x="251" y="38" width="7.2" height="29" rx="3.6" fill="url(#preloadIvoryGrad)" />
+            <rect class="pl-bar-reveal" x="266" y="38" width="7.2" height="29" rx="3.6" fill="url(#preloadIvoryGrad)" />
+
+            <path class="pl-draw-fast"
+                  d="M254 53 C 246 46, 236 49, 231 59"
+                  stroke="url(#preloadIvoryGrad)" stroke-width="6.8" stroke-linecap="round" fill="none" />
+
+            <!-- 6. GIANT SWEEPING 'ल' RIBBON CURVE & TAIL -->
+            <path class="pl-draw-ribbon"
+                  d="M235 53 C 216 42, 199 56, 202 82 C 206 111, 236 121, 274 109 C 304 99, 326 89, 340 101 C 346 107, 341 117, 330 115"
+                  stroke="url(#preloadIvoryGrad)" stroke-width="8.5" stroke-linecap="round" fill="none" />
+
+            <!-- 7. REGISTERED TRADEMARK (®) -->
+            <g class="pl-sub-reveal" transform="translate(294, 35)">
+              <circle cx="8" cy="8" r="8" stroke="#FAF7F2" stroke-width="1.6" fill="rgba(22,4,4,0.6)" />
+              <text x="8" y="11.5" text-anchor="middle" fill="#FAF7F2" font-family="'Inter', sans-serif" font-weight="800" font-size="9.5">R</text>
+            </g>
+
+            <!-- 8. SUBTITLE: 'THE TASTE OF MOOD' & 'CAFÉ' -->
+            <text class="pl-sub-reveal" x="18" y="109"
+                  fill="#FAF7F2"
+                  opacity="0.88"
+                  font-family="'Inter', sans-serif"
+                  font-weight="600"
+                  font-size="11.2"
+                  letter-spacing="0.19em">THE TASTE OF MOOD</text>
+
+            <text class="pl-sub-reveal" x="285" y="116"
+                  fill="#FFC300"
+                  font-family="'Inter', sans-serif"
+                  font-weight="800"
+                  font-size="11"
+                  letter-spacing="0.16em">CAFÉ</text>
+          </g>
+        </svg>
       </div>
+
+      <!-- Bottom Editorial Counter & Cycling Kitchen Note -->
+      <div class="preloader-hud-bottom">
+        <div class="preloader-status-wrap">
+          <span class="preloader-live-dot"></span>
+          <span class="preloader-status-text" id="preloaderStatus">FIRING THE GRILL PRESS</span>
+        </div>
+        <div class="preloader-counter-wrap">
+          <span class="preloader-count-num" id="preloaderCount">00</span>
+          <span class="preloader-count-pct">%</span>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -44,18 +175,130 @@
     <!-- Sticky Glassmorphism Header -->
     <header class="site-header">
       <div class="container nav-container">
-        <a href="index.html" class="brand-logo" aria-label="Kaaffeella Home">
-          <svg class="logo-svg" viewBox="0 0 210 65" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <text x="2" y="42" fill="#3B0A0A" font-family="'Playfair Display', serif" font-weight="600" font-style="italic" font-size="32" letter-spacing="-0.5">Kaaffee</text>
-            <line x1="38" y1="18" x2="105" y2="18" stroke="#3B0A0A" stroke-width="2" stroke-linecap="round"/>
-            <path d="M110 18H168M152 18V44M163 18V44" stroke="#3B0A0A" stroke-width="3.2" stroke-linecap="round"/>
-            <path d="M112 36C116 24 134 22 144 32C147 27 151 26 152 29" stroke="#3B0A0A" stroke-width="3" stroke-linecap="round" fill="none"/>
-            <path d="M148 13C144 7 153 3 149 -2" stroke="#D92323" stroke-width="3" stroke-linecap="round"/>
-            <path d="M132 42C138 48 156 48 164 43" stroke="#D92323" stroke-width="2.8" stroke-linecap="round"/>
-            <path d="M135 49C141 54 155 54 161 49" stroke="#D92323" stroke-width="2.4" stroke-linecap="round"/>
-            <path d="M140 55C145 58 153 58 158 55" stroke="#D92323" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </a>
+        <a href="index.html" class="brand-logo" id="interactiveLogo" aria-label="Kaaffeella — The Taste of Mood Café">
+  <svg class="kaaffeella-live-logo" viewBox="0 0 365 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- userSpaceOnUse prevents straight lines from ever disappearing in SVG! -->
+      <linearGradient id="espressoGrad" x1="0" y1="0" x2="365" y2="128" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#4A120B" />
+        <stop offset="50%" stop-color="#350A06" />
+        <stop offset="100%" stop-color="#220503" />
+      </linearGradient>
+
+      <linearGradient id="amberGoldGrad" x1="210" y1="105" x2="295" y2="5" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stop-color="#D97706" />
+        <stop offset="50%" stop-color="#F59E0B" />
+        <stop offset="100%" stop-color="#FFC300" />
+      </linearGradient>
+
+      <filter id="signShadow" x="-6%" y="-6%" width="114%" height="118%">
+        <feDropShadow dx="0" dy="2" stdDeviation="1.6" flood-color="#220503" flood-opacity="0.16" />
+      </filter>
+    </defs>
+
+    <g class="logo-master-group" filter="url(#signShadow)">
+      
+      <!-- 1. OVERARCHING 'K' SWASH & STEM (Matches Storefront Sign) -->
+      <!-- Left Loop & Vertical Stem of K -->
+      <path d="M18 60 C 11 45, 22 30, 36 37 C 27 48, 21 67, 17 85" 
+            stroke="url(#espressoGrad)" stroke-width="7.5" stroke-linecap="round" fill="none" />
+      <!-- Sweeping Top Arch of K over 'aa' -->
+      <path class="k-arch-line"
+            d="M23 58 C 46 31, 102 25, 148 34" 
+            stroke="url(#espressoGrad)" stroke-width="7" stroke-linecap="round" fill="none" />
+      <!-- Lower Kick of K connecting into 'a' -->
+      <path d="M29 56 L 46 82" 
+            stroke="url(#espressoGrad)" stroke-width="7.2" stroke-linecap="round" fill="none" />
+
+      <!-- 2. BOLD CONNECTED SCRIPT 'aaffee' (Positioned so 'ee' touches 'ल' seamlessly) -->
+      <text x="45" y="82"
+            fill="url(#espressoGrad)"
+            font-family="'Playfair Display', Georgia, serif"
+            font-weight="700"
+            font-style="italic"
+            font-size="55"
+            letter-spacing="-2">aaffee</text>
+
+      <!-- Bridge stroke connecting final 'e' directly into the 'ल' curve -->
+      <path d="M188 73 C 195 73, 200 68, 204 61" 
+            stroke="url(#espressoGrad)" stroke-width="6.2" stroke-linecap="round" fill="none" />
+
+      <!-- 3. GOLDEN RISING STEAM FLAMES (Centered Directly Above 'ला' Top Bar) -->
+      <g class="steam-group">
+        <!-- Left Tall Flame -->
+        <path class="steam-flame flame-1"
+              d="M251 34 C 239 22, 246 10, 240 2 C 253 8, 249 21, 258 32 Z"
+              fill="url(#amberGoldGrad)" />
+        <!-- Right Inner Flame -->
+        <path class="steam-flame flame-2"
+              d="M262 34 C 255 25, 260 16, 255 8 C 266 14, 263 24, 268 32 Z"
+              fill="url(#amberGoldGrad)" />
+      </g>
+
+      <!-- 4. GOLDEN 4-LAYER COFFEE CUP & HANDLE (Nested Inside 'ला') -->
+      <g class="golden-cup-group">
+        <!-- Wave 1 (Top Rim) -->
+        <path class="cup-wave wave-1"
+              d="M222 68 C 234 80, 270 80, 282 68"
+              stroke="url(#amberGoldGrad)" stroke-width="5.2" stroke-linecap="round" fill="none" />
+        <!-- Wave 2 -->
+        <path class="cup-wave wave-2"
+              d="M226 77 C 237 88, 267 88, 278 77"
+              stroke="url(#amberGoldGrad)" stroke-width="4.8" stroke-linecap="round" fill="none" />
+        <!-- Wave 3 -->
+        <path class="cup-wave wave-3"
+              d="M232 86 C 241 95, 263 95, 272 86"
+              stroke="url(#amberGoldGrad)" stroke-width="4.5" stroke-linecap="round" fill="none" />
+        <!-- Wave 4 (Cup Base) -->
+        <path class="cup-wave wave-4"
+              d="M240 94 C 246 99, 258 99, 264 94"
+              stroke="url(#amberGoldGrad)" stroke-width="4" stroke-linecap="round" fill="none" />
+        <!-- Cup Handle on Right -->
+        <path class="cup-wave wave-handle"
+              d="M280 72 C 294 70, 296 88, 275 90"
+              stroke="url(#amberGoldGrad)" stroke-width="4.4" stroke-linecap="round" fill="none" />
+      </g>
+
+      <!-- 5. HINDI 'ला' TOP BAR & VERTICAL STEMS (Solid <rect> + Paths so they NEVER vanish!) -->
+      <!-- Shirorekha (Horizontal Top Bar of ला) -->
+      <rect x="196" y="37" width="88" height="7.5" rx="3.75" fill="url(#espressoGrad)" />
+      <!-- Vertical Stem 1 (of ल) -->
+      <rect x="251" y="38" width="7.2" height="29" rx="3.6" fill="url(#espressoGrad)" />
+      <!-- Vertical Stem 2 (of ा Matra) -->
+      <rect x="266" y="38" width="7.2" height="29" rx="3.6" fill="url(#espressoGrad)" />
+
+      <!-- Inner Arch of 'ल' (Joins Stem 1 at x=254) -->
+      <path d="M254 53 C 246 46, 236 49, 231 59"
+            stroke="url(#espressoGrad)" stroke-width="6.8" stroke-linecap="round" fill="none" />
+
+      <!-- 6. THE SIGNATURE GIANT SWEEPING 'ल' RIBBON CURVE & TAIL -->
+      <path class="laa-giant-curve"
+            d="M235 53 C 216 42, 199 56, 202 82 C 206 111, 236 121, 274 109 C 304 99, 326 89, 340 101 C 346 107, 341 117, 330 115"
+            stroke="url(#espressoGrad)" stroke-width="8.5" stroke-linecap="round" fill="none" />
+
+      <!-- 7. REGISTERED TRADEMARK (®) -->
+      <g transform="translate(294, 35)">
+        <circle cx="8" cy="8" r="8" stroke="#350A06" stroke-width="1.8" fill="#FAF7F2" />
+        <text x="8" y="11.5" text-anchor="middle" fill="#350A06" font-family="'Inter', sans-serif" font-weight="800" font-size="9.5">R</text>
+      </g>
+
+      <!-- 8. SUBTITLE: 'THE TASTE OF MOOD' & 'CAFÉ' -->
+      <text x="18" y="109"
+            fill="#350A06"
+            font-family="'Inter', sans-serif"
+            font-weight="700"
+            font-size="11.2"
+            letter-spacing="0.19em">THE TASTE OF MOOD</text>
+
+      <text x="285" y="116"
+            fill="#D97706"
+            font-family="'Inter', sans-serif"
+            font-weight="800"
+            font-size="11"
+            letter-spacing="0.16em">CAFÉ</text>
+    </g>
+  </svg>
+</a>
 
         <nav class="desktop-nav" aria-label="Primary Navigation">
           <a href="index.html" class="nav-link active">Home</a>

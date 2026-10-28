@@ -172,38 +172,69 @@ const MENU_DATA = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Bulletproof Editorial Preloader Controller
+ // 1. Split-Shutter Editorial Preloader Controller (index.html only)
   const preloader = document.getElementById("preloader");
   const preloaderFill = document.getElementById("preloaderFill");
   const preloaderCount = document.getElementById("preloaderCount");
+  const preloaderStatus = document.getElementById("preloaderStatus");
 
   if (preloader) {
-    let progress = 15;
-    if (preloaderFill) preloaderFill.style.width = `${progress}%`;
-    if (preloaderCount) preloaderCount.textContent = `${progress}%`;
+    const statusMessages = [
+      "FIRING THE GRILL PRESS",
+      "LAYERING FRESH CHUTNEY & DAIRY",
+      "BREWING GOLDEN MOOD",
+      "WELCOME TO KAAFFEELLA"
+    ];
 
-    const timer = setInterval(() => {
-      progress += Math.floor(Math.random() * 15) + 10;
-      if (progress >= 90) {
-        progress = 90; // Hold until window fully loads
-      }
-      if (preloaderFill) preloaderFill.style.width = `${progress}%`;
-      if (preloaderCount) preloaderCount.textContent = `${progress}%`;
-    }, 60);
+    let progress = 8;
+    let isWindowLoaded = document.readyState === "complete";
 
     window.addEventListener("load", () => {
-      clearInterval(timer);
-      progress = 100;
-      if (preloaderFill) preloaderFill.style.width = "100%";
-      if (preloaderCount) preloaderCount.textContent = "100%";
-
-      setTimeout(() => {
-        preloader.classList.add("preloader-hidden");
-        setTimeout(() => {
-          preloader.style.display = "none";
-        }, 1000);
-      }, 1000);
+      isWindowLoaded = true;
     });
+
+    function renderPreloaderProgress(val) {
+      const clamped = Math.min(100, Math.max(0, val));
+      if (preloaderFill) {
+        preloaderFill.style.transform = `scaleX(${clamped / 100})`;
+      }
+      if (preloaderCount) {
+        preloaderCount.textContent = clamped < 10 ? `0${clamped}` : `${clamped}`;
+      }
+      if (preloaderStatus) {
+        const msgIndex = Math.min(
+          statusMessages.length - 1,
+          Math.floor((clamped / 100) * statusMessages.length)
+        );
+        preloaderStatus.textContent = statusMessages[msgIndex];
+      }
+    }
+
+    renderPreloaderProgress(progress);
+
+    const timer = setInterval(() => {
+      const step = isWindowLoaded ? 16 : 9;
+      progress += Math.floor(Math.random() * step) + 6;
+
+      if (!isWindowLoaded && progress >= 92) {
+        progress = 92;
+      }
+
+      if (progress >= 100) {
+        progress = 100;
+        renderPreloaderProgress(100);
+        clearInterval(timer);
+
+        setTimeout(() => {
+          preloader.classList.add("preloader-hidden");
+          setTimeout(() => {
+            preloader.style.display = "none";
+          }, 1100);
+        }, 260);
+      } else {
+        renderPreloaderProgress(progress);
+      }
+    }, 65);
   }
 
   // 2. Dynamic Year
